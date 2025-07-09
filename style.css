@@ -92,17 +92,20 @@ footer {
 
 body.dark-mode {
   background-color: #121212;
-  color: #f0f0f0;
+  color: #000000;
 }
 
+
 body.dark-mode a {
-  color: #9ecbff;
+  color: #ffffff;
 }
 
 body.dark-mode #theme-toggle {
   background-color: #333;
-  color: #000000;
+  color: #f17fe2;
 }
+
+
 
 
 
