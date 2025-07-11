@@ -95,7 +95,6 @@ body.dark-mode {
   color: #000000;
 }
 
-
 body.dark-mode a {
   color: #ffffff;
 }
@@ -105,10 +104,13 @@ body.dark-mode #theme-toggle {
   color: #f17fe2;
 }
 
+body.dark-mode #about {
+  background-color: #69327d;
+}
 
-
-
-
+body.dark-mode #contact {
+  background-color: #69327d;
+}
 
 @media screen and (max-width: 768px) {
   body {
