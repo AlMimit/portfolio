@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background: #4CAF50;
+  background: #1E5631;
   color: white;
   padding: 40px;
   text-align: center;
@@ -90,9 +90,38 @@ footer {
 
 }
 
+body.dark-mode header {
+  background-color: #2C2C2C;
+  color: #ffffff;
+}
+
 body.dark-mode {
   background-color: #121212;
   color: #000000;
+}
+
+body.dark-mode #about {
+  background-color: rgba(155, 48, 255, 0.25);
+  color: #E0E0E0;
+  padding: 2.5rem;
+}
+
+body.dark-mode #contact {
+  background-color:rgba(155, 48, 255, 0.25);
+  color: #E0E0E0;
+  padding: 2.5rem;
+}
+
+body.dark-mode #about h2 {
+  color: #A8FF60;
+}
+
+body.dark-mode #contact h2 {
+  color: #A8FF60;
+}
+
+body.dark-mode #projects h2 {
+  color: #3AAFA9;
 }
 
 body.dark-mode a {
@@ -104,13 +133,6 @@ body.dark-mode #theme-toggle {
   color: #f17fe2;
 }
 
-body.dark-mode #about {
-  background-color: #69327d;
-}
-
-body.dark-mode #contact {
-  background-color: #69327d;
-}
 
 @media screen and (max-width: 768px) {
   body {
