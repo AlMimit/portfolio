@@ -26,6 +26,9 @@ body.dark-mode {
   --color-button-text: #f17fe2;
   --color-h2: #53ca4b;
   --color-p: #E0E0E0;
+  --gradient-start: #A8FF60;
+  --gradient-end: #00eaff;
+  --glow-color: #00eaff;
 }
 
 body {
@@ -57,6 +60,7 @@ section > p {
     line-height: 1.8;
 }
 
+/* Light-mode*/
 .skills-list {
   list-style: none;
   padding: 0;
@@ -132,13 +136,27 @@ footer {
   background-color: var(--color-button-bg);
   cursor: pointer;
   z-index: 1000;
+  transition: all 0.3s ease;
+}
 
+#theme-toggle:hover {
+  transform: scale(1.1);
+  background-color: #00c896;;
+  color: white;
+  box-shadow: 0 0 10px 3px rgba(0, 200, 150, 0.7);
 }
 
 /* Dark-Mode*/
 body.dark-mode #theme-toggle {
   background-color: #333;
   color: #f17fe2;
+}
+
+body.dark-mode #theme-toggle:hover {
+  background-color: #00eaff;
+  color: #121212;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px 4px rgba(0, 234, 255, 0,9);
 }
 
 body.dark-mode header {
@@ -181,6 +199,35 @@ body.dark-mode #projects h2 {
 
 body.dark-mode .project-title {
   color: white;
+  position: relative;
+  text-shadow: 0 0 8px #ffffff, 0 0 12px #4fc3f7;
+}
+
+body.dark-mode .project-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #53ca4b, #00eaff);
+  animation: underline-glow 1500ms infinite alternate;
+}
+
+/* body.dark-mode .project-title {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px var(--glow-color);
+} */
+
+body.dark-mode .project-title {
+  color: var(--glow-color); /* fallback για Firefox */
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px var(--glow-color);
 }
 
 body.dark-mode .project-description {
@@ -195,6 +242,17 @@ body.dark-mode #contact {
   background-color:rgba(155, 48, 255, 0.25);
   color: #E0E0E0;
   padding: 2.5rem;
+}
+
+@keyframes underline-glow {
+  0% {
+    opacity: 0.4;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1.1);
+  }
 }
 
 @media screen and (max-width: 768px) {
